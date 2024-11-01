@@ -77,10 +77,6 @@ void showHelpMessage() {
     std::cout << "                    nbr | deg       - Generation method\n";
     std::cout << "                    <numNodes> <numEdges>\n";
     std::cout << "                  Example: ./HypergraphKCore <datasets> gen P nbr 1000 5000\n";
-    std::cout << rainbow_colors[2] << "  genR            Generate hypergraph with random distribution\n";
-    std::cout << "                  Options:\n";
-    std::cout << "                    <numNodes> <numEdges> <maxEdgeSize>\n";
-    std::cout << "                  Example: ./HypergraphKCore <datasets> genR 1000 5000 10\n";
     std::cout << rainbow_colors[3] << "  --help          Print this help message\n";
 
 
