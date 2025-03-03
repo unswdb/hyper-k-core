@@ -1,7 +1,6 @@
-
 # Hypergraph Core Decomposition Source Code
 
-The `HypergraphKCore` tool is designed for analyzing and manipulating hypergraphs through various operations including k-core decomposition, sorting, and generating hypergraphs with specific distributions.
+The `HypergraphKCore` repo provides tools for our k-core decomposition implementation for hypergraphs as in our **SIGMOD 2025** paper **Accelerating Core Decomposition in Billion-Scale Hypergraphs**, together with other useful tools for sorting and generating hypergraphs with specific distributions.
 
 ## Getting Started
 
@@ -16,8 +15,6 @@ If you are using Max OS X, you need to install the `llvm` to allow the `omp` lib
 ```bash
 brew install llvm
 ```
-
-
 
 #### Suggested IDE
 We recommend using CLion as the IDE for this project. You can download it from [https://www.jetbrains.com/clion/download/](https://www.jetbrains.com/clion/download/).
@@ -120,10 +117,34 @@ For further details on options and their usage, run the tool with the `--help` o
 The dataset file expected by the `HypergraphKCore` tool should be structured where each line represents a hyperedge. Each line contains a list of node identifiers, separated by commas, indicating that these nodes are part of the same hyperedge. For example, a line like `1,2,3,4,5` signifies that 
  a hyperedge containing nodes 1, 2, 3, 4, and 5. This format allows the representation of complex connectivity patterns within the hypergraph, enabling the tool to accurately perform its analyses and manipulations based on the input dataset.
 
-## Example Usage
+### Example Usage
 
 We provide a shell script `main_run.sh` to run the experiments in the paper. The simple dataset `coauth-MAG-History-full.hyp` is provided in the `/dataset` directory.
 
-### License
+## License
+
+If you use this work, please cite:
+
+```bibtex
+@article{10.1145/3709656,
+  author = {Zhang, Wenqian and Yang, Zhengyi and Wen, Dong and Li, Wentao and Zhang, Wenjie and Lin, Xuemin},
+  title = {Accelerating Core Decomposition in Billion-Scale Hypergraphs},
+  year = {2025},
+  issue_date = {February 2025},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {3},
+  number = {1},
+  url = {https://doi.org/10.1145/3709656},
+  doi = {10.1145/3709656},
+  abstract = {Hypergraphs provide a versatile framework for modeling complex relationships beyond pairwise interactions, finding applications in various domains. k-core decomposition is a fundamental task in hypergraph analysis that decomposes hypergraphs into cohesive substructures. Existing studies capture the cohesion in hypergraphs based on the vertex neighborhood size. However, such decomposition poses unique challenges, including the efficiency of core value updates, redundant computation, and high memory consumption. We observe that the state-of-the-art algorithms do not fully address the above challenges and are unable to scale to large hypergraphs. In this paper, we propose an efficient approach for hypergraph k-core decomposition. Novel concepts and strategies are developed to compute the core value of each vertex and reduce redundant computation of vertices. Experimental results on real-world and synthetic hypergraphs demonstrate that our approach significantly outperforms the state-of-the-art algorithm by 7 times on average while reducing the average memory usage by 36 times. Moreover, while existing algorithms fail on tens of millions hyperedges, our approach efficiently handles billion-scale hypergraphs in only a single thread.},
+  journal = {Proc. ACM Manag. Data},
+  month = feb,
+  articleno = {6},
+  numpages = {27},
+  keywords = {core decomposition, hypergraph, k-core}
+}
+```
 
 This project is licensed under the MIT License - see the [LICENSE.txt](License.txt) file for details.
+
